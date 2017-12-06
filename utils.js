@@ -9,6 +9,7 @@ const Utils = module.exports = {
   uuid  : uuid,
   _     : lodash,
   lodash: lodash,
+  md5   : md5,
 
   myuuid: function () {
     return uuid().replace(/-/g, '');
@@ -40,10 +41,6 @@ const Utils = module.exports = {
     const ips = ip.match(/:?((\d{1,3}\.?){4})/);
 
     return ips && ips[1] ? ips[1] : '';
-  },
-
-  md5: function (content) {
-    return md5(content);
   },
 
   /**
