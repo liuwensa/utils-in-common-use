@@ -1,12 +1,2 @@
-# files
-*.log
-*.zip
-.DS_Store
-
-# folders
-node_modules/*
-coverage/*
-
-# Editor directories and files
-.vscode
 .idea
+node_modules

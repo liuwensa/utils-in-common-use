@@ -1,15 +1,31 @@
-describe('Random API:', function () {
-    describe('#digitUppercase()', function () {
-        it(`outils.digitUppercase(9999999999) === '玖拾玖亿玖仟玖佰玖拾玖万玖仟玖佰玖拾玖元整' should return true`, function () {
-            assert(outils.digitUppercase(9999999999) === "玖拾玖亿玖仟玖佰玖拾玖万玖仟玖佰玖拾玖元整")
-        });
+'use strict';
 
-        it(`outils.digitUppercase(0) === '零元整' should return true`, function () {
-            assert(outils.digitUppercase(0) === "零元整")
-        });
+const should = require('should');
+const assert = require('assert');
 
-        it(`outils.digitUppercase(-235423545) === '欠贰亿叁仟伍佰肆拾贰万叁仟伍佰肆拾伍元整' should return true`, function () {
-            assert(outils.digitUppercase(-235423545) === "欠贰亿叁仟伍佰肆拾贰万叁仟伍佰肆拾伍元整")
-        });
+const myutils = require('../utils');
+
+const StringUtils = myutils.string;
+
+describe('string api:', function () {
+  describe('digitUppercase()', function () {
+    it(`digitUppercase(100) should return 壹佰元整`, function () {
+      StringUtils.digitUppercase(100).should.equal('壹佰元整');
     });
-})
+    it(`digitUppercase(0.5) should return 伍角`, function () {
+      StringUtils.digitUppercase(0.5).should.equal('伍角');
+    });
+  });
+
+  describe('getRandomCode()', function () {
+    it(`getRandomCode() should return a string`, function () {
+      assert(StringUtils.getRandomCode())
+    });
+  });
+
+  describe('htmlToText()', function () {
+    it('htmlToText("<html>大家好，<br>dddd</html>") should return 大家好，dddd', function () {
+      StringUtils.htmlToText('<html>大家好，<br>dddd</html>').should.equal('大家好，dddd');
+    });
+  });
+});
