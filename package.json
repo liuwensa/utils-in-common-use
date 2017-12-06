@@ -2,20 +2,10 @@
   "name": "utils-in-common-use",
   "version": "1.0.0",
   "description": "utils in common use",
-  "main": "utils",
-  "scripts": {
-    "test": "mocha"
+  "main": "utils.js",
+  "directories": {
+    "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/liuwensa/utils-in-common-use.git"
-  },
-  "keywords": [
-    "utils",
-    "tools"
-  ],
-  "author": "liuwensa",
-  "license": "NO",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "extend": "^3.0.1",
@@ -27,5 +17,22 @@
   "devDependencies": {
     "mocha": "^4.0.1",
     "should": "^13.1.3"
-  }
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuwensa/utils-in-common-use.git"
+  },
+  "keywords": [
+    "utils",
+    "tools"
+  ],
+  "author": "liuwensa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuwensa/utils-in-common-use/issues"
+  },
+  "homepage": "https://github.com/liuwensa/utils-in-common-use#readme"
 }
