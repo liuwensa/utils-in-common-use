@@ -4,12 +4,20 @@ const os     = require('os');
 const uuid   = require('node-uuid');
 const lodash = require('lodash');
 const md5    = require('md5');
+const crypto = require('crypto');
+const fs     = require('fs');
 
 const Utils = module.exports = {
   uuid  : uuid,
   _     : lodash,
   lodash: lodash,
   md5   : md5,
+
+  filemd5: function (filepath) {
+     // 读取Buffer
+     const buffer = fs.readFileSync(filepath);
+     return md5(buffer);
+  },
 
   myuuid: function () {
     return uuid().replace(/-/g, '');
